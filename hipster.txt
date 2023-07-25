@@ -1,0 +1,17 @@
+Git Commands:
+1. git version
+2. git config --global user.name "vishnu" <-- Setting username 
+3. git config --global user.email "vichu_77@yahoo.com" <-- Setting email
+4. git config --global --list <-- Getting username & email
+5. git clone https://github.com/VishnuParthasarathy/github-demo.git <-- Cloning GitHub repo locally
+6. git status
+7. git add <file-name> <-- Adding a file for git to track
+8. git status (would show the file to be committed)
+9. git commit -am "A message" <-- adding and commiting changes to local repo
+10. git status would show the working dir is clean
+11. Git branch name would be shown once a repo is initialized.
+12. git branch -m main <-- Changing a branch name
+13. git config --global --list <-- Listing global config
+14. git push origin main or git push
+15. git config --global core.editor "notepad++. exe -multiInst -nosession"
+16. git add . <-- Adding all the files on the "pwd"
