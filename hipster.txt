@@ -15,3 +15,10 @@ Git Commands:
 14. git push origin main or git push
 15. git config --global core.editor "notepad++. exe -multiInst -nosession"
 16. git add . <-- Adding all the files on the "pwd"
+17. git pull origin main
+18. git remote add origin https://github.com/VishnuParthasarathy/starter-web.git <-- To add a remote origin
+19. git remote get-url --all origin <-- To get remote URL
+20. git remote set-url origin https://github.com/VishnuParthasarathy/starter-web.git <-- To update the remote url
+21. git pull origin main <-- Pulls the repo from remote to local
+22. git push origin main <-- Pushes from local to remote
+23. git ls-files <-- To show list of files that git is tracking
