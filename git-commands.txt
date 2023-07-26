@@ -45,7 +45,24 @@ Git Commands:
 44. git diff HEAD HEAD^ <-- To show difference between last commit (N) and (N-1)
 45. git diff main origin/main <-- To show difference between local repository and remote repository.
 
+<<<<<<< HEAD
 Rebasing:
 0. When working with a feature branch, if we need catch up with the changes in main, we can use rebase.
 1. git rebase main <-- To catch up with main branch
 2. git fetch origin main <-- To update the reference between origin and main (Non-destructive)
+=======
+Branching and Merging:
+0. Branch creates a copy of the current branch to work with before merging with "main" branch
+1. Isolate "Feature" or "Topic" branches
+2. git branch -a <-- To list all branches
+	- * Indicates the current branch
+	- Displayes all branches in Local and Remote Repository
+3. git branch <New-branch-name> <-- To create a New Branch
+4. git checkout mynewbranch <-- To switch to new branch 
+5. git branch -m <old-name> <new-name> <-- To rename a branch
+6. git branch -d <branch-name>
+7. git diff <branch-1> <branch-2> <-- To show difference between two branches
+8. git checkout <branch1> and git merge <branch2> <-- To merge changes made in branch-2 to branch-1
+9. Fast forwarding merge is only possible when "NO" commits are in <branch-1>
+10. git branch -d <branch-name> <-- To delete a branch
+>>>>>>> 9bb3be6 (Local: Commit to add merge commands to git_commands.txt)
