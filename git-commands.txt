@@ -14,7 +14,7 @@ Git Commands:
 13. git config --global --list <-- Listing global config
 14. git push origin main or git push
 15. git config --global core.editor "notepad++. exe -multiInst -nosession"
-16. git add . <-- Adding all the files on the "pwd"
+16. git add . <-- Adding all the files on the "pwd" recursively
 17. git pull origin main
 18. git remote add origin https://github.com/VishnuParthasarathy/starter-web.git <-- To add a remote origin
 19. git remote get-url --all origin <-- To get remote URL
@@ -22,3 +22,25 @@ Git Commands:
 21. git pull origin main <-- Pulls the repo from remote to local
 22. git push origin main <-- Pushes from local to remote
 23. git ls-files <-- To show list of files that git is tracking
+24. git reset HEAD hipster.txt or 
+25. git restore --staged hipster.txt <-- To unstage the file from staging area
+26. git restore hipster.txt <-- To undo (ctrl+z) any changes
+27. git mv hipster.txt git_commands.txt <-- To rename or move a file
+28. git rm <file-name> & git commit -m "message" <-- To delete a file
+29. git restore <filename> <-- To undo delete before git commit 
+30. git help log
+31. git log <-- Gives details on commits
+32. git log --oneline --graph --decorate <-- Commits in a single line
+33. git log sha1...sha2 <-- Between two commits
+34. git log --since="3 days"
+35. git log -- <filename> <-- To get commit history for a specific file
+36. git show <commitID> <-- To show details on a specific commit
+37. git config --global alias.<alias-name> "git command w/o the word git"
+38. Use .gitignore <-- To ignore any files by git
+39. git diff <-- To show the difference in Staging area vs the working area
+40. git diff HEAD <-- To show difference in working area vs local repository (last commit)
+41. git diff --stage HEAD <-- To show difference in staging area vs local repository (last commit)
+42. git diff -- <filename> <-- To show difference for a single file
+43. git log --online and git diff <commitID1> <commitID1> (Bottom Up)
+44. git diff HEAD HEAD^ <-- To show difference between last commit (N) and (N-1)
+45. git diff main origin/main <-- To show difference between local repository and remote repository.
