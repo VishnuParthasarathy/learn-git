@@ -44,3 +44,8 @@ Git Commands:
 43. git log --online and git diff <commitID1> <commitID1> (Bottom Up)
 44. git diff HEAD HEAD^ <-- To show difference between last commit (N) and (N-1)
 45. git diff main origin/main <-- To show difference between local repository and remote repository.
+
+Rebasing:
+0. When working with a feature branch, if we need catch up with the changes in main, we can use rebase.
+1. git rebase main <-- To catch up with main branch
+2. git fetch origin main <-- To update the reference between origin and main (Non-destructive)
