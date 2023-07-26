@@ -1,3 +1,90 @@
+IP: 192.168.29.109/10.65.94.100
+Port: 7990
+visparth/ClearExam
+
+Git Commands:
+1. git init <dir name> --> To create or initialize a new Repo
+2. git status --> Status
+3. git add <filename> --> To Track a file or to stage a file in Git <Staging Dir>
+4. git commit <filename> -m "message" --> To add or commit a file to Repo
+5. git log --> To know the history <works on commits>
+6. git config -- list --> To list Config Variables
+7. git config user.name VishnuPartha --> To set User Name Globally
+8. git config user.email visparth@cisco.com --> To set User Email Globally
+9. git remote add origin http://192.168.29.109:7990/scm/test/ansible-playbooks.git --> Sets Remote bitbucket as origin
+10. git push -u origin master -- Pushes committed files to origin and master branch
+11. git remote get-url --all origin --> To get the URL of Bitbucket
+12. git remote set-url --add <name> http://10.65.42.20:7990/scm/test/ansible-playbooks.git --> To add a remote URL
+13. git remote set-url --delete <name> http://10.65.94.100:7990/scm/test/ansible-playbooks.git
+14. git remote set-url --add <name> http://visparth@10.65.42.20:7990/scm/test/ansible-playbooks.git or git remote show origin--> To change password on loacl ref
+15. git branch -- To display list of branches
+16. git checkout -b <name of new branch> --> To create a New Branch
+17. git push origin <name of new branch> --> To push new branch to remote ref
+18. git checkout <name of existing branch> --> To switch between branches
+19. git ls-files --> To list files within a branch
+20. git merge <name of branch>
+21. git clone http://visparth@10.65.42.20:7990/scm/test/ansible-playbooks.git/ test_repo --> To clone the contents of a repo to new repo "test_repo"
+22. git config --local core.pager ""
+
+
+ 
+git push --repo=ansible_repo 
+
+http://10.65.42.20:7990/scm/test/ansible-playbooks.git
+
+https://www.youtube.com/watch?v=xuB1Id2Wxak
+
+Git Intermediate Training:
+PPT Info : https://intermediate.gitgood.training/dev-workflow
+Learn GIT: https://learngitbranching.js.org/
+Labs:
+1. https://intermediate.gitgood.training/labs/warm-up
+2. https://intermediate.gitgood.training/labs/feature-branch-flow
+3. https://intermediate.gitgood.training/labs/remotes
+4. https://intermediate.gitgood.training/labs/cherry-pick
+5. https://intermediate.gitgood.training/labs/revert
+6. https://intermediate.gitgood.training/labs/reset
+7. https://intermediate.gitgood.training/labs/bisect
+8. https://intermediate.gitgood.training/labs/rebase
+9. https://intermediate.gitgood.training/labs/squashing
+
+Notes:
+1. Three Stages:
+	- Working Directoy (User has full control)
+	- Staging Area (User can put and pull)
+	- History Repo
+
+2. Config file location:
+	- Local
+	- Global
+	- System
+
+3. Branch Commands:
+	To list available branches- git branch
+	To create a new branch - git branch <branch-name>
+	To switch to a branch - git switch <branch-name>
+	To create and switch to a new branch - git switch -c <branch-name>
+	To merge a branch with main - git switch <main>, git merge <branch-name>
+
+GitOPS: Weaveworks
+
+************************************************************************************************************************************************************************************
+Git Course:
+
+1. Git is a distributed source control system (VCS).
+2. Open source, very fast (since most of commands locally).
+3. Repository contains files, history, config managed by Git.
+4. Three States of Git: (Local)
+	- Working Directory
+	- Staging Area
+	- Commit - Git Repository (history)
+5. Remote Repository.
+6. Master Branch-Timeline with chabges
+7. Git Installation: git-scm.com git-for-windows.githib.io) 
+8. github.com
+9. notepad-plus-plus.org
+
+
 Git Commands:
 1. git version
 2. git config --global user.name "vishnu" <-- Setting username 
@@ -41,12 +128,15 @@ Git Commands:
 40. git diff HEAD <-- To show difference in working area vs local repository (last commit)
 41. git diff --stage HEAD <-- To show difference in staging area vs local repository (last commit)
 42. git diff -- <filename> <-- To show difference for a single file
-43. git log --online and git diff <commitID1> <commitID1> (Bottom Up)
+43. git log --oneline and git diff <commitID1> <commitID1> (Bottom Up)
 44. git diff HEAD HEAD^ <-- To show difference between last commit (N) and (N-1)
-45. git diff main origin/main <-- To show difference between local repository and remote repository.
+45. git diff main origin/main <-- To show difference between local repository and remote repository. 
 
 Branching and Merging:
 0. Branch creates a copy of the current branch to work with before merging with "main" branch
+	- git merge <-- fastforwards the merge from feature branch to main branch
+	- Which means that git simply moves the pointer to the feature branch commit
+	 - "--no-ff" means no fastforward, git does a merge commit 
 1. Isolate "Feature" or "Topic" branches
 2. git branch -a <-- To list all branches
 	- * Indicates the current branch
@@ -66,3 +156,10 @@ Rebasing:
 2. git fetch origin main <-- To update the reference between origin and main (Non-destructive)
 3. git pull --rebase origin main <-- To update the local main branch with the changes in remote repository
 4. git rebase --continue <-- To continue if any conflicts
+
+Stashing:
+0. To stash any wip files and work on another file.
+1. git stash
+2. git stash apply
+3. git stash list
+4. git stash drop
