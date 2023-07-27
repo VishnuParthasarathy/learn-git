@@ -1,4 +1,37 @@
+IP: 192.168.29.109/10.65.94.100
+Port: 7990
+visparth/ClearExam
+
+Git Commands:
+1. git init <dir name> --> To create or initialize a new Repo
+2. git status --> Status
+3. git add <filename> --> To Track a file or to stage a file in Git <Staging Dir>
+4. git commit <filename> -m "message" --> To add or commit a file to Repo
+5. git log --> To know the history <works on commits>
+6. git config -- list --> To list Config Variables
+7. git config user.name VishnuPartha --> To set User Name Globally
+8. git config user.email visparth@cisco.com --> To set User Email Globally
+9. git remote add origin http://192.168.29.109:7990/scm/test/ansible-playbooks.git --> Sets Remote bitbucket as origin
+10. git push -u origin master -- Pushes committed files to origin and master branch
+11. git remote get-url --all origin --> To get the URL of Bitbucket
+12. git remote set-url --add <name> http://10.65.42.20:7990/scm/test/ansible-playbooks.git --> To add a remote URL
+13. git remote set-url --delete <name> http://10.65.94.100:7990/scm/test/ansible-playbooks.git
+14. git remote set-url --add <name> http://visparth@10.65.42.20:7990/scm/test/ansible-playbooks.git or git remote show origin--> To change password on loacl ref
+15. git branch -- To display list of branches
+16. git checkout -b <name of new branch> --> To create a New Branch
+17. git push origin <name of new branch> --> To push new branch to remote ref
+18. git checkout <name of existing branch> --> To switch between branches
+19. git ls-files --> To list files within a branch
+20. git merge <name of branch>
+21. git clone http://visparth@10.65.42.20:7990/scm/test/ansible-playbooks.git/ test_repo --> To clone the contents of a repo to new repo "test_repo"
+22. git config --local core.pager ""
+
+
  
+git push --repo=ansible_repo 
+
+http://10.65.42.20:7990/scm/test/ansible-playbooks.git
+
 https://www.youtube.com/watch?v=xuB1Id2Wxak
 
 Git Intermediate Training:
@@ -15,82 +48,89 @@ Labs:
 8. https://intermediate.gitgood.training/labs/rebase
 9. https://intermediate.gitgood.training/labs/squashing
 
+Notes:
+1. Three Stages:
+	- Working Directoy (User has full control)
+	- Staging Area (User can put and pull)
+	- History Repo
+
+2. Config file location:
+	- Local
+	- Global
+	- System
+
+3. Branch Commands:
+	To list available branches- git branch
+	To create a new branch - git branch <branch-name>
+	To switch to a branch - git switch <branch-name>
+	To create and switch to a new branch - git switch -c <branch-name>
+	To merge a branch with main - git switch <main>, git merge <branch-name>
+
+GitOPS: Weaveworks
+
 ************************************************************************************************************************************************************************************
-Git Course Notes:
+Git Course:
 
 1. Git is a distributed source control system (VCS).
 2. Open source, very fast (since most of commands locally).
 3. Repository contains files, history, config managed by Git.
 4. Three States of Git: (Local)
-	- Working Directory (User has full control)
-	- Staging Area (User can put and pull)
+	- Working Directory
+	- Staging Area
 	- Commit - Git Repository (history)
 5. Remote Repository.
 6. Master Branch-Timeline with chabges
 7. Git Installation: git-scm.com git-for-windows.githib.io) 
 8. github.com
 9. notepad-plus-plus.org
-10. Config file location:
-	- Local
-	- Global
-	- System
 
-Git Config Commands:
+
+Git Commands:
 1. git version
 2. git config --global user.name "vishnu" <-- Setting username 
 3. git config --global user.email "vichu_77@yahoo.com" <-- Setting email
-4. git config --global core.editor "notepad++. exe -multiInst -nosession"
-5. git config --global alias.<alias-name> "git command w/o the word git" <-- To configure alias
-6. git config --global --list <-- Listing global config
-7. Use .gitignore <-- To ignore any files by git
-
-Git Configuring Remote Origin:
-1. git remote add origin https://github.com/VishnuParthasarathy/starter-web.git <-- To add a remote origin
-2. git remote get-url --all origin <-- To get remote URL
-3. git remote set-url origin https://github.com/VishnuParthasarathy/starter-web.git <-- To update the remote url
-4. git remote set-url --add <name> http://10.65.42.20:7990/scm/test/ansible-playbooks.git --> To add a remote URL
-5. git remote set-url --delete <name> http://10.65.94.100:7990/scm/test/ansible-playbooks.git
-6. git remote set-url --add <name> http://visparth@10.65.42.20:7990/scm/test/ansible-playbooks.git or git remote show origin
-
-Remote Repo Cloning, Staging and commiting: 
-0. git init <dir name> --> To create or initialize a new Repo. Git branch name would be shown once a repo is initialized.
-1. git clone https://github.com/VishnuParthasarathy/github-demo.git <-- Cloning GitHub repo locally
-2. git add <file-name> <-- Adding a file for git to track
-3. git add . <-- Adding all the files on the "pwd" recursively
-4. git status (would show the file to be committed)
-5. git commit -am "A message" <-- adding and commiting changes to local repo
-6. git status would show the working dir is clean
-7. git ls-files <-- To show list of files that git is tracking
-
-Pulling from remote and Pushing to remote:
-1. git pull origin main <-- Pulls the repo from remote to local
-2. git push origin main or git push <-- Pushes from local to remote
-3. git push -u origin main <-- Pushes committed files to origin and main branch
-4. git push --repo=ansible_repo 
-
-Display Commit History:
-1. git help log
-2. git log <-- Gives details on commits
-3. git log --since="3 days"
-4. git log --oneline --graph --decorate <-- Commits in a single line
-5. git log -- <filename> <-- To get commit history for a specific file
-6. git log sha1...sha2 <-- Between two commits
-7. git show <commitID> <-- To show details on a specific commit
-8. git log --oneline and git diff <commitID1> <commitID1> (Bottom Up)
-
-Undo Changes:
-1. git restore --staged <filename> <-- To unstage the file from staging area before commit
-2. git restore <filename> <-- To undo (ctrl+z) any changes from the working directory before commit
-3. git mv hipster.txt git_commands.txt <-- To rename or move a file
-4. git rm <file-name> & git commit -m "message" <-- To delete a file
-
-To show differences: 
-1. git diff <-- To show the difference in Staging area vs the working area
-2. git diff HEAD <-- To show difference in working area vs local repository (last commit)
-3. git diff --stage HEAD <-- To show difference in staging area vs local repository (last commit)
-4. git diff -- <filename> <-- To show difference for a single file
-5. git diff HEAD HEAD^ <-- To show difference between last commit (N) and (N-1)
-6. git diff main origin/main <-- To show difference between local repository and remote repository. 
+4. git config --global --list <-- Getting username & email
+5. git clone https://github.com/VishnuParthasarathy/github-demo.git <-- Cloning GitHub repo locally
+6. git status
+7. git add <file-name> <-- Adding a file for git to track
+8. git status (would show the file to be committed)
+9. git commit -am "A message" <-- adding and commiting changes to local repo
+10. git status would show the working dir is clean
+11. Git branch name would be shown once a repo is initialized.
+12. git branch -m main <-- Changing a branch name
+13. git config --global --list <-- Listing global config
+14. git push origin main or git push
+15. git config --global core.editor "notepad++. exe -multiInst -nosession"
+16. git add . <-- Adding all the files on the "pwd" recursively
+17. git pull origin main
+18. git remote add origin https://github.com/VishnuParthasarathy/starter-web.git <-- To add a remote origin
+19. git remote get-url --all origin <-- To get remote URL
+20. git remote set-url origin https://github.com/VishnuParthasarathy/starter-web.git <-- To update the remote url
+21. git pull origin main <-- Pulls the repo from remote to local
+22. git push origin main <-- Pushes from local to remote
+23. git ls-files <-- To show list of files that git is tracking
+24. git reset HEAD hipster.txt or 
+25. git restore --staged hipster.txt <-- To unstage the file from staging area
+26. git restore hipster.txt <-- To undo (ctrl+z) any changes
+27. git mv hipster.txt git_commands.txt <-- To rename or move a file
+28. git rm <file-name> & git commit -m "message" <-- To delete a file
+29. git restore <filename> <-- To undo delete before git commit 
+30. git help log
+31. git log <-- Gives details on commits
+32. git log --oneline --graph --decorate <-- Commits in a single line
+33. git log sha1...sha2 <-- Between two commits
+34. git log --since="3 days"
+35. git log -- <filename> <-- To get commit history for a specific file
+36. git show <commitID> <-- To show details on a specific commit
+37. git config --global alias.<alias-name> "git command w/o the word git"
+38. Use .gitignore <-- To ignore any files by git
+39. git diff <-- To show the difference in Staging area vs the working area
+40. git diff HEAD <-- To show difference in working area vs local repository (last commit)
+41. git diff --stage HEAD <-- To show difference in staging area vs local repository (last commit)
+42. git diff -- <filename> <-- To show difference for a single file
+43. git log --oneline and git diff <commitID1> <commitID1> (Bottom Up)
+44. git diff HEAD HEAD^ <-- To show difference between last commit (N) and (N-1)
+45. git diff main origin/main <-- To show difference between local repository and remote repository. 
 
 Branching and Merging:
 0. Branch creates a copy of the current branch to work with before merging with "main" branch
@@ -109,7 +149,6 @@ Branching and Merging:
 8. git checkout <branch1> and git merge <branch2> <-- To merge changes made in branch-2 to branch-1
 9. Fast forwarding merge is only possible when "NO" commits are in <branch-1>
 10. git branch -d <branch-name> <-- To delete a branch
-11. git branch -m main <-- Renaming a branch name
 
 Rebasing:
 0. When working with a feature branch, if we need catch up with the changes in main, we can use rebase.
@@ -120,19 +159,7 @@ Rebasing:
 
 Stashing:
 0. To stash any wip files and work on another file.
-1. git stash <-- To stash a tracked file in working directory
-2. git stash apply <-- To bring back the file to continue working
-3. git stash list <-- To list the stash
-4. git stash drop <-- To drop the last stash in list
-5. git stash -u <-- To stash untracked file
-6. git stash pop <-- To apply and drop stash
-
-Tagging:
-0. Creating a label during a commit
-1. git tag <tag-name> <-- To create a simple tag
-2. git tag -a <tag-nam> <-- To create a annotated tag
-3. git tag --list <-- To list the tags
-
-Reset and Reflog:
-1. git reset HEAD^ <-- To reset History to one level below (H-1)
-2. git reflog <-- To show all the 
+1. git stash
+2. git stash apply
+3. git stash list
+4. git stash drop
